@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { getIcon } from '../utils/iconUtils';
 import MainFeature from '../components/MainFeature';
-import { Menu } from 'lucide-react';
+import { Menu as MenuIcon } from 'lucide-react';
 
 function Home() {
   const [activeTab, setActiveTab] = useState('board');
@@ -16,7 +16,7 @@ function Home() {
   // Initialize icons as React components
   const LogoIcon = getIcon('check-circle');
   //const MenuIcon = getIcon('menu');
-  <Menu className="h-6 w-6" />
+  <MenuIcon className="h-6 w-6" />
   const UserIcon = getIcon('user');
   
   return (
