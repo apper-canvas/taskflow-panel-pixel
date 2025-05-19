@@ -1,8 +1,8 @@
-import * as Icons from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 
 // Pre-process icons for efficient lookup
 const iconComponents = Object.fromEntries(
-  Object.entries(Icons)
+  Object.entries(LucideIcons)
     .filter(([_, component]) => typeof component === 'function')
 );
 
@@ -13,5 +13,5 @@ export const getIcon = (iconName) => {
   }
 
   // Fallback to a common icon if not found
-  return Icons.AlertCircle || Icons.Smile;
+  return LucideIcons.AlertCircle || LucideIcons.Smile;
 };
