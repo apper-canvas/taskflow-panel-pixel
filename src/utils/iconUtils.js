@@ -1,7 +1,17 @@
 import * as Icons from 'lucide-react';
 
+// Pre-process icons for efficient lookup
+const iconComponents = Object.fromEntries(
+  Object.entries(Icons)
+    .filter(([_, component]) => typeof component === 'function')
+);
+
 export const getIcon = (iconName) => {
-  return (Icons[iconName] && typeof Icons[iconName] === 'function')
-    ? Icons[iconName]
-    : Icons.Smile;
+  // Direct lookup - assuming all conversions are handled
+  if (iconComponents[iconName]) {
+    return iconComponents[iconName];
+  }
+
+  // Fallback to a common icon if not found
+  return Icons.AlertCircle || Icons.Smile;
 };
