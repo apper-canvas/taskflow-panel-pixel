@@ -1,4 +1,4 @@
-import * as LucideIcons from 'lucide-react';
+ import * as LucideIcons from 'lucide-react';
 
 export const getIcon = (iconName) => {
   // First attempt: direct access with the original name
