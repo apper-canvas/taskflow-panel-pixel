@@ -51,13 +51,18 @@ export const getIcon = (iconName) => {
   }
 
   // Ultimate fallback - return an icon we know exists
-  // Try several different common icons to maximize chances
-  return (
-  LucideIcons.AlertCircle ||
-  LucideIcons.Smile ||
-  LucideIcons.Check ||
-  LucideIcons.Circle ||
-    // If all else fails, return a function that renders nothing
-    () => null
-  );
+  // Try several different common icons to maximize chances of finding one
+  const fallbackIcons = [
+    'AlertCircle',
+    'Smile',
+    'Check',
+    'Circle'
+  ];
+  
+  for (const iconName of fallbackIcons) {
+    if (typeof LucideIcons[iconName] === 'function') {
+      return LucideIcons[iconName];
+    }
+  }
+  return () => null; // If all else fails, return a function that renders nothing
 };
